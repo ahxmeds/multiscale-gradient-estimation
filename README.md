@@ -1,6 +1,6 @@
-# Multiscale Gradient Estimation for Low-Compute Training for Image Restoration Problems
+# Multiscale Training of Convolutional Neural Networks
 
-A PyTorch implementation of multiscale gradient estimation for efficient training of image reconstruction models. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies that significantly reduce computational cost during training while maintaining model performance.
+A PyTorch implementation of multiscale gradient estimation for efficient training of image reconstruction convolutional neural network models. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies that significantly reduce computational cost during training while maintaining model performance.
 
 ## 📋 Table of Contents
 - [Installation](#installation)
@@ -343,8 +343,8 @@ If you use this code in your research, please cite:
 
 ```bibtex
 @article{multiscale2024,
-  title={Multiscale Gradient Estimation for Inverse Problems},
-  author={Your Name},
+  title={Multiscale Training of Convolutional Neural Networks},
+  author={S. Ahamed, N. Zakariaei, E. Haber, M. Eliasof},
   journal={Transactions on Machine Learning Research},
   year={2024}
 }
@@ -354,7 +354,7 @@ If you use this code in your research, please cite:
 
 ## 📧 Contact
 
-For questions or issues, please open an issue on GitHub or contact [your-email@example.com].
+For questions or issues, please open an issue on GitHub or contact [shadab.ahamed@hotmail.com].
 
 ---
 
