@@ -2,6 +2,14 @@
 
 A PyTorch implementation of multiscale gradient estimation for efficient training of image reconstruction convolutional neural network models. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies that significantly reduce computational cost during training while maintaining model performance.
 
+<p align="center">
+  <img src="assets/multiscale_sgd_cropped.png" alt="Multiscale Gradient Estimation illustration" width="800">
+</p>
+
+<p align="center">
+  <em>Illustration of our Multiscale Gradient Estimation (MGE) algorithm. This figure shows a schematic of a 3-level MGE algorithm with resolutions $h$ (finest), $2h$, and $4h$ (coarsest) with batch sizes $N_3 > N_2 > N_1$.</em>
+</p>
+
 ## 📋 Table of Contents
 - [Installation](#installation)
 - [Data Setup](#data-setup)
