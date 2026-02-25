@@ -1,6 +1,6 @@
-# Multiscale Gradient Estimation for Inverse Problems
+# Multiscale Gradient Estimation for Low-Compute Training for Image Restoration Problems
 
-A PyTorch implementation of multiscale gradient estimation for image reconstruction tasks. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies.
+A PyTorch implementation of multiscale gradient estimation for efficient training of image reconstruction models. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies that significantly reduce computational cost during training while maintaining model performance.
 
 ## 📋 Table of Contents
 - [Installation](#installation)
