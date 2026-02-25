@@ -352,7 +352,7 @@ If you use this code in your research, please cite:
   title={Multiscale Training of Convolutional Neural Networks},
   author={S. Ahamed, N. Zakariaei, E. Haber, M. Eliasof},
   journal={Transactions on Machine Learning Research},
-  year={2024}
+  year={2026}
 }
 ```
 
