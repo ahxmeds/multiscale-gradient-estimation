@@ -1,6 +1,6 @@
 # Multiscale Gradient Estimation for Inverse Problems
 
-A minimal, clean PyTorch implementation of multiscale gradient estimation for image reconstruction tasks. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale (FMG) training strategies.
+A PyTorch implementation of multiscale gradient estimation for image reconstruction tasks. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies.
 
 ## 📋 Table of Contents
 - [Installation](#installation)
@@ -148,7 +148,7 @@ python train_denoising.py --mode single --network unet --dataset cifar10 --run_i
 # Multiscale training with UNet on CIFAR-10
 python train_denoising.py --mode multiscale --network unet --dataset cifar10 --run_id 1 --device_id 0
 
-# Full multiscale (FMG) training with ResNet on CelebA
+# Full multiscale training with ResNet on CelebA
 python train_denoising.py --mode fullmultiscale --network resnet --dataset celeba --run_id 2 --device_id 1
 ```
 
@@ -234,7 +234,7 @@ python train_superresolution.py --mode single --network srnet --dataset urban100
 - **Use case**: Improved convergence with multiscale gradients
 
 ### Full Multiscale (`--mode fullmultiscale`)
-- **Description**: Full Multigrid (FMG) cycle with hierarchical training
+- **Description**: Full Multscale cycle with hierarchical training
 - **Levels**: 0-3 (adaptive)
 - **Batch size**: Adaptive (16 × 2^(3-j) at level j)
 - **Use case**: Best performance, memory-efficient for high-resolution
@@ -310,7 +310,7 @@ results/
 The core innovation lies in computing gradients across multiple resolution scales:
 - **Single scale**: Standard gradient computation at finest resolution
 - **Multiscale**: Gradient differences between consecutive scales (coarse correction)
-- **Full multiscale**: Hierarchical FMG cycle with level-dependent batch sizes
+- **Full multiscale**: Hierarchical Full-Multiscale cycle with level-dependent batch sizes
 
 ### Forward Operators
 Task-specific corruption models:
