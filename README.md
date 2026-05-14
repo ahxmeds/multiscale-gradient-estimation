@@ -1,6 +1,9 @@
 # Multiscale Training of Convolutional Neural Networks
 
-A PyTorch implementation of multiscale gradient estimation for efficient training of image reconstruction convolutional neural network models. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies that significantly reduce computational cost during training while maintaining model performance.
+This repository contains the official implementation for the paper: 
+> S. Ahamed, N. Zakariaei, E. Haber, M. Eliasof, *Multiscale Training of Convolutional Neural Networks*, Transactions on Machine Learning Research (TMLR), 2026. (https://openreview.net/forum?id=HTQuEZwEHw)
+
+In this repository, we provide implementation of multiscale gradient estimation for efficient training of image reconstruction convolutional neural network models. This repository provides training scripts and utilities for denoising, deblurring, inpainting, and super-resolution using single-scale, multiscale, and full multiscale training strategies that significantly reduce computational cost during training while maintaining model performance.
 
 <p align="center">
   <img src="assets/multiscale_sgd_cropped.png" alt="Multiscale Gradient Estimation illustration" width="800">
@@ -9,6 +12,7 @@ A PyTorch implementation of multiscale gradient estimation for efficient trainin
 Illustration of our Multiscale Gradient Estimation (MGE) algorithm. This figure shows a schematic of a 3-level MGE algorithm with resolutions $h$ (finest), $2h$, and $4h$ (coarsest) with batch sizes $N_3 > N_2 > N_1$.
 
 ## 📋 Table of Contents
+
 - [Installation](#installation)
 - [Data Setup](#data-setup)
 - [Repository Structure](#repository-structure)
@@ -22,8 +26,11 @@ Illustration of our Multiscale Gradient Estimation (MGE) algorithm. This figure 
 - [Output and Logs](#output-and-logs)
 - [Key Features](#key-features)
 - [Citation](#citation)
+- [Contact](#contact)
+- [License](#license)
 
 ---
+<a id="installation"></a>
 
 ## 🚀 Installation
 
@@ -53,6 +60,8 @@ pip install -r requirements.txt
 - matplotlib
 
 ---
+
+<a id="data-setup"></a>
 
 ## 📂 Data Setup
 
@@ -103,6 +112,7 @@ unzip img_align_celeba.zip
 **Urban100**: For super-resolution, you need to prepare low-resolution and high-resolution image pairs. The dataset should be saved as PyTorch tensors (.pt files) containing image patches. Place them in `/path/to/your/data/Urban100/` with the names shown in the directory structure above.
 
 ---
+<a id="repository-structure"></a>
 
 ## 📁 Repository Structure
 
@@ -128,6 +138,8 @@ multiscale-gradient-estimation/
 
 ---
 
+<a id="training"></a>
+
 ## 🏋️ Training
 
 All training scripts follow a consistent interface with the following arguments:
@@ -141,6 +153,7 @@ All training scripts follow a consistent interface with the following arguments:
 | `--device_id` | int | - | `0` | CUDA device ID |
 | `--seed` | int | - | `42` | Random seed |
 
+<a id="denoising"></a>
 ### Denoising
 
 Train models to denoise images corrupted with Gaussian noise.
@@ -158,6 +171,7 @@ python train_denoising.py --mode multiscale --network unet --dataset cifar10 --r
 python train_denoising.py --mode fullmultiscale --network resnet --dataset celeba --run_id 2 --device_id 1
 ```
 
+<a id="deblurring"></a>
 ### Deblurring
 
 Train models to deblur images corrupted with Gaussian blur (σ = [3, 3]).
@@ -178,6 +192,7 @@ python train_deblurring.py --mode fullmultiscale --network resnet --dataset stl1
 python train_deblurring.py --mode single --network unet --dataset cifar10 --run_id 3 --device_id 0
 ```
 
+<a id="inpainting"></a>
 ### Inpainting
 
 Train models to inpaint images with corrupted regions.
@@ -198,6 +213,7 @@ python train_inpainting.py --mode fullmultiscale --network resnet --dataset cele
 python train_inpainting.py --mode single --network unet --dataset cifar10 --run_id 3 --device_id 0
 ```
 
+<a id="super-resolution"></a>
 ### Super-Resolution
 
 Train models to upsample low-resolution images by 2x.
@@ -225,6 +241,8 @@ python train_superresolution.py --mode single --network srnet --dataset urban100
 
 ---
 
+<a id="training-modes"></a>
+
 ## 🔧 Training Modes
 
 ### Single Scale (`--mode single`)
@@ -246,6 +264,8 @@ python train_superresolution.py --mode single --network srnet --dataset urban100
 - **Use case**: Best performance, memory-efficient for high-resolution
 
 ---
+
+<a id="model-architectures"></a>
 
 ## 🏗️ Model Architectures
 
@@ -275,6 +295,8 @@ python train_superresolution.py --mode single --network srnet --dataset urban100
   - Residual learning: output = model(bilinear_upsample(input)) + bilinear_upsample(input)
 
 ---
+
+<a id="output-and-logs"></a>
 
 ## 📊 Output and Logs
 
@@ -310,6 +332,8 @@ results/
 
 ---
 
+<a id="key-features"></a>
+
 ## ✨ Key Features
 
 ### Multiscale Gradient Computation
@@ -343,6 +367,8 @@ Intelligent batch size adaptation:
 
 ---
 
+<a id="citation"></a>
+
 ## 📝 Citation
 
 If you use this code in your research, please cite:
@@ -358,11 +384,15 @@ If you use this code in your research, please cite:
 
 ---
 
+<a id="contact"></a>
+
 ## 📧 Contact
 
 For questions or issues, please open an issue on GitHub or contact [shadab.ahamed@hotmail.com].
 
 ---
+
+<a id="license"></a>
 
 ## 📄 License
 
